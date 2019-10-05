@@ -110,7 +110,7 @@ export default class CartComp extends Component {
                 <Button block type="primary" style={{marginBottom: 10}}>
                   Checkout
                 </Button>
-                <Button block type="danger">
+                <Button block type="danger" onClick={() =>this.props.onResetData()}>
                   Cancel
                 </Button>
               </div>

@@ -33,6 +33,10 @@ export default class HomeView extends Component {
     if(index !== -1) state.splice(index, 1)
     return await this.setState({order: state})
   }
+
+  onResetData = async () => {
+    return await this.setState({order: []})
+  }
   
   isAuth = () => {
     if(localStorage.getItem('auth-token')) return this.state.order
@@ -46,7 +50,7 @@ export default class HomeView extends Component {
             <HomeComp onOrder={data => this.handleOrder(data)} onFetchState={val => this.handlingStateHome(val)} />
           </Col>
           <Col sm={6}>
-            <CartComp onStoreState={this.isAuth()} onCountProductCart={this.state.order.length} onDeleteHandling={(val) => this.onDeleteHandling(val)}/>
+            <CartComp onStoreState={this.isAuth()} onCountProductCart={this.state.order.length} onDeleteHandling={(val) => this.onDeleteHandling(val)} onResetData={() => this.onResetData()}/>
           </Col>
         </Row>
       </Layout>
