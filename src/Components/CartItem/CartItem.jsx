@@ -8,30 +8,27 @@ import { useSelector, useDispatch } from "react-redux";
 const CartItem = props => {
   const content = useSelector(state => state.Carts.orderList);
   const fetchData = content.find(item => item.id === props.id);
-  const objIndex = content.findIndex(item => item.id === props.id)
+  const objIndex = content.findIndex(item => item.id === props.id);
   const dispatch = useDispatch();
 
-  const countTotalPrice = () => {
-    let totalPrice = 0
-    content.forEach(item => {
-      totalPrice += (item.price * item.qty)
-    })
-    dispatch({ type: "SET_CART_TOTAL_PRICE", payload: totalPrice });
-  }
-
   const handleAddItemToCart = () => {
-    content[objIndex].qty += 1
-    dispatch({ type: "SET_CART_ADD_QTY", payload: content });
-    countTotalPrice()
+    if(content[objIndex].qty < props.stock) {
+      content[objIndex].qty += 1;
+      return dispatch({ type: "SET_CART_ADD_QTY", payload: content });
+    }
   };
 
   const handleMinItemToCart = () => {
-    const objIndex = content.findIndex(item => item.id === props.id)
-    content[objIndex].qty -= 1
-    dispatch({ type: "SET_CART_MIN_QTY", payload: content });
-    countTotalPrice()
+    if (content[objIndex].qty > 1) {
+      content[objIndex].qty -= 1;
+      return dispatch({ type: "SET_CART_MIN_QTY", payload: content });
+    }
+    else {
+      content.splice(objIndex, 1)
+      return dispatch({ type: "DEL_CART_PRODUCT", payload: content });
+    }
   };
-
+  
   return (
     <Card className="cart-item">
       <div className="cart-content">

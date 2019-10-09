@@ -13,13 +13,13 @@ const ContentPart = props => {
   const content = useSelector(state => state.Product.productList);
   const dispatch = useDispatch();
 
-  const FetchDataTes = async () => {
+  const FetchData = async () => {
     const result = await getProducts();
     return dispatch(result);
   };
 
   useEffect(() => {
-    FetchDataTes();
+    FetchData();
   }, []);
 
   return (

@@ -15,6 +15,10 @@ const Cart = (state = initialState, { type, payload }) => {
       return { orderList: payload };
     case "SET_CART_TOTAL_PRICE":
       return { ...state, totalPrice: payload };
+    case "DEL_CART_PRODUCT":
+      return { orderList: payload };
+    case "DEL_CART_ALL_ORDER":
+      return { orderList: payload };
     default:
       return state;
   }

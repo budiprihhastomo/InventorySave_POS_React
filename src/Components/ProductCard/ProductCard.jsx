@@ -10,16 +10,6 @@ const ProductCard = props => {
   const content = useSelector(state => state.Carts.orderList);
   const dispatch = useDispatch();
 
-  const countTotalPrice = () => {
-    let totalPrice = props.price
-    console.log(content)
-    content.forEach(item => {
-      totalPrice += (item.price * item.qty)
-    })
-    console.log(totalPrice)
-    dispatch({ type: "SET_CART_TOTAL_PRICE", payload: totalPrice });
-  }
-
   // NOTE Handling Add Item To Cart
   const handlingAddCart = id => {
     const existProduct = content.find(item => item.id === id);
@@ -39,7 +29,6 @@ const ProductCard = props => {
         payload: content
       });
     }
-    countTotalPrice()
   };
 
   return (

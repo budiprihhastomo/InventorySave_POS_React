@@ -14,7 +14,8 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^6.1.1",
     "redux-thunk": "^2.3.0",
-    "rupiah-format": "^1.0.0"
+    "rupiah-format": "^1.0.0",
+    "sweetalert2-react": "^0.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
