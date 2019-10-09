@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./Views/Home/Home";
+import "antd/dist/antd.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// React Redux Initialize
+import { Provider } from "react-redux";
+import Store from "./Public/Redux/Store";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// Create Route App
+const RouterPage = () => {
+  return (
+    <Provider store={Store}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={props => <Home {...props} />} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
+};
+
+ReactDOM.render(<RouterPage />, document.getElementById("root"));
