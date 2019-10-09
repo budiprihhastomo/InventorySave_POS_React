@@ -3,15 +3,17 @@ import { Drawer, Button, Modal } from "antd";
 import "./DrawerPart.css";
 import CartItem from "../CartItem/CartItem";
 import Rupiah from "rupiah-format";
-import SweetAlert from "sweetalert2-react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 
+// Modal Remove Cart Item
+const { confirm } = Modal;
+
 const DrawerPart = props => {
   const [visibleModal, setVisibleModal] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [visibleSwal, setVisibleSwal] = useState(false)
+  const [isExistCart, setIsExistCart] = useState(false);
   const content = useSelector(state => state.Carts);
   const dispatch = useDispatch();
   const countTotalPrice = () => {
@@ -24,7 +26,9 @@ const DrawerPart = props => {
 
   useEffect(() => {
     countTotalPrice();
-  });
+    if (content.orderList.length > 0) return setIsExistCart(false);
+    else return setIsExistCart(true);
+  }, [[], isExistCart]);
 
   const handleOpen = data => {
     setVisibleModal(true);
@@ -47,19 +51,16 @@ const DrawerPart = props => {
   };
 
   const handleCancelOrder = () => {
-    setVisibleSwal(true)
-    return dispatch({ type: "DEL_CART_ALL_ORDER", payload: [] });
-  };
-
-  const AlertModal = () => {
-    return (
-      <SweetAlert
-        show={visibleSwal}
-        title="Demo"
-        text="SweetAlert in React"
-        onConfirm={() => setVisibleSwal(false)}
-      />
-    );
+    confirm({
+      title: "Are you sure to cancel the order?",
+      content: "Orders will be destroyed and you must select the product again",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk() {
+        dispatch({ type: "DEL_CART_ALL_ORDER", payload: [] });
+      }
+    });
   };
 
   return (
@@ -103,6 +104,7 @@ const DrawerPart = props => {
               block
               type="primary"
               onClick={handleOpen}
+              disabled={isExistCart}
             >
               Checkout
             </Button>
@@ -111,6 +113,7 @@ const DrawerPart = props => {
               block
               type="danger"
               onClick={handleCancelOrder}
+              disabled={isExistCart}
             >
               Cancel
             </Button>
@@ -139,8 +142,6 @@ const DrawerPart = props => {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
-
-      <AlertModal />
     </>
   );
 };
