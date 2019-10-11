@@ -43,3 +43,56 @@
 .cart-drawer .ant-drawer-body { 
     padding: 0 !important;
 }
+
+/* Modal Component */
+.modal-head span {
+    font-size: 14pt;
+    font-weight: bold;
+    display: block;
+}
+
+.modal-head {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+.modal-checkout {
+    height: 240px;
+    overflow-y: scroll;
+}
+
+.modal-checkout span {
+    font-size: 12pt;
+}
+
+span.modal-name {
+    font-weight: bold;
+}
+
+span.modal-subprice {
+    float: right;
+}
+
+.modal-list {
+    padding: 25px;
+    border-bottom: 0.5pt solid #eee;
+    border-top: 0.5pt solid #eee;
+}
+
+.modal-foot {
+    padding: 25px;
+}
+
+.modal-foot span {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.modal-right-sect {
+    text-align: right;
+    padding: 5px 0;
+}

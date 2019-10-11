@@ -46,8 +46,8 @@ const CartItem = props => {
             type="primary"
             shape="circle"
             onClick={handleMinItemToCart}
+            icon="minus"
           >
-            <Icon className="btn-cart-icon" type="minus" />
           </Button>
           <Input className="cart-qty" value={fetchData.qty} />
           <Button
@@ -55,8 +55,8 @@ const CartItem = props => {
             type="primary"
             shape="circle"
             onClick={handleAddItemToCart}
+            icon="plus"
           >
-            <Icon className="btn-cart-icon" type="plus" />
           </Button>
         </div>
         <div className="cart-price">
