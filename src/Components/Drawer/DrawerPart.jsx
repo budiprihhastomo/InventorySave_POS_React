@@ -4,6 +4,7 @@ import "./DrawerPart.css";
 import CartItem from "../CartItem/CartItem";
 import Rupiah from "rupiah-format";
 import Swal from "sweetalert2-react"
+import { orderProducts } from '../../Public/Redux/Actions/Products'
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -41,6 +42,15 @@ const DrawerPart = props => {
     props.resVisibleSearch(false);
   };
 
+  const handlePostOrder = () => {
+    let dataHeader = {transaction_price: totalPrice + ((10/100) * totalPrice), user_id: '1bb1b730-eb0b-11e9-8731-f7d41e13cf40'}
+    let dataDetail = []
+    content.orderList.map(item => {
+      dataDetail.push([item.id, item.qty, item.price])
+    })
+    orderProducts(dataHeader, dataDetail)
+  }
+
   const handlePaymentOrder = () => {
     confirm({
       title: "Are you sure to order the products?",
@@ -49,6 +59,7 @@ const DrawerPart = props => {
       okType: "danger",
       cancelText: "Cancel",
       onOk() {
+        handlePostOrder()
         setIsLoading(true)
         setTimeout(() => {
           setIsLoading(false)

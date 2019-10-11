@@ -4,9 +4,9 @@ import HeaderPart from "../../Components/Header/HeaderPart";
 import SiderPart from "../../Components/Sider/SiderPart";
 import ContentPart from "../../Components/Content/ContentPart";
 import DrawerPart from "../../Components/Drawer/DrawerPart";
-import "./Home.css";
+import "./Dashboard.css";
 
-const Home = props => {
+const Dashboard = props => {
   const [collapsed, setCollapsed] = useState(true);
   const [visibleSearch, setVisibleSearch] = useState(false);
   const [visibleCart, setVisibleCart] = useState(false);
@@ -35,4 +35,4 @@ const Home = props => {
   );
 };
 
-export default Home;
+export default Dashboard;
