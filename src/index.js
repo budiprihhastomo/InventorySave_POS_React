@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from "./Views/Dashboard/Dashboard";
 import Transaction from "./Views/Transaction/Transaction";
 import "antd/dist/antd.css";
@@ -15,8 +15,9 @@ const RouterPage = () => {
     <Provider store={Store}>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={props => <Dashboard {...props} />} />
-          <Route path="/transaction" exact component={props => <Transaction {...props} />} />
+          <Route path="/dashboard" exact render={props => <Dashboard {...props} />} />
+          <Route path="/transaction" exact render={props => <Transaction {...props} />} />
+          <Redirect to="/dashboard"/>
         </Switch>
       </BrowserRouter>
     </Provider>

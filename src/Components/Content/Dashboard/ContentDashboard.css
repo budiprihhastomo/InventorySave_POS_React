@@ -1,0 +1,74 @@
+.container {
+    padding: 24px;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+.card-static {
+    height: 160px;
+    margin: 10px !important;
+}
+
+.card-first {
+    background: rgb(131,77,155) !important;
+    background: linear-gradient(90deg, rgba(131,77,155,1) 0%, rgba(208,78,214,1) 100%) !important;
+    border-radius: 10px !important;
+}
+
+.card-second {
+    background: rgb(253,116,108) !important;
+    background: linear-gradient(90deg, rgba(253,116,108,1) 0%, rgba(255,144,104,1) 100%) !important;
+    border-radius: 10px !important;
+}
+
+.card-third {
+    background: rgb(30,60,114) !important;
+    background: linear-gradient(90deg, rgba(30,60,114,1) 0%, rgba(42,82,152,1) 100%) !important;
+    border-radius: 10px !important;
+}
+
+.text-item {
+    display: block;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.text-head {
+    font-size: 14pt;
+}
+
+.text-price {
+    font-size: 18pt;
+}
+
+.text-inc {
+    font-size: 10pt;
+}
+
+.icon-card {
+    width: 60px;
+    height: 60px;
+    border-radius: 120px;
+    background: #fff;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    left: 140px;
+}
+
+.icon-card .icon {
+    font-size: 24pt;
+    padding: 15px;
+}
+
+.section-chart, .section-history {
+    margin-top: 50px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .icon-card {
+        display: none;
+    }
+}

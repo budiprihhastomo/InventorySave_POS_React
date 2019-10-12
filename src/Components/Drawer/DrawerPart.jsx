@@ -200,8 +200,8 @@ const DrawerPart = props => {
         footer={[<Button key="print" type="danger" icon="printer">Print</Button>,<Button key="buy" type="primary" onClick={handleSendEmail} loading={isLoading} icon="mail">Send Email</Button>]}
       >
         <div className="modal-head">
-          <span className="modal-receipt">Receipt no : #0000000000</span>
-          <span className="modal-cashier">Cashier : Pecita Pearce</span>
+          <span className="modal-receipt">Receipt no : #50272637261</span>
+          <span className="modal-cashier">Cashier : Budi Prih Hastomo</span>
         </div>
         <div className="modal-checkout">
           {content.orderList.map(item => {

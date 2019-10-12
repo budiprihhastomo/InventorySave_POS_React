@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Layout } from "antd";
 import HeaderPart from "../../Components/Header/HeaderPart";
 import SiderPart from "../../Components/Sider/SiderPart";
-import ContentPart from "../../Components/Content/ContentPart";
+import ContentPart from "../../Components/Content/Transaction/ContentTransaction";
 import DrawerPart from "../../Components/Drawer/DrawerPart";
 import "./Transaction.css";
 

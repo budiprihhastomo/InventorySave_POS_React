@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { Layout, Row } from "antd";
-import "./ContentPart.css";
-import ProductCard from "../ProductCard/ProductCard";
+import "./ContentTransaction.css";
+import ProductCard from "../../ProductCard/ProductCard";
 
 // Redux + Axios Fetch Data
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../Public/Redux/Actions/Products";
+import { getProducts } from "../../../Public/Redux/Actions/Products";
 
 const { Content } = Layout;
 
-const ContentPart = props => {
+const ContentTransaction = props => {
   const content = useSelector(state => state.Product.productList);
   const dispatch = useDispatch();
 
@@ -42,4 +42,4 @@ const ContentPart = props => {
   );
 };
 
-export default ContentPart;
+export default ContentTransaction;
