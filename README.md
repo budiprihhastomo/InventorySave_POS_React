@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Inventory Save POS (React.JS)
 
-## Available Scripts
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-In the project directory, you can run:
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-### `npm start`
+# Introduce
+Inventory Save POS is an is an application that is used for the purpose of recording data and transactions in the form of goods in a structured manner, of course this will help the client when trying to find out reports and developments through the store using a web-based POS application. This application was created using Front End React and from Back End is supported by Express for its own API.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - Free access API service used for POS application data exchange
+  - Created using the JS framework, BackEnd Express with Node.JS and Front End is React.js
+  - etc.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# Prerequiste
 
-### `npm test`
+  - Node.js - Download and Install Node.js - Simple bash script to manage multiple active node.js versions.
+  - Clone this repo into local storage and build for the production or development mode.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Configuration
+> - Basic Configuration
+> - Structured
+> - Input Validation (Development Mode)
+> - File Upload (Image + Validation) (Development Mode)
+> - Authorization with JWT (Development Mode)
+> - Redis Implementation
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Inventory Save POS requires [Node.js](https://nodejs.org/) v8+ to run.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Install the dependencies and start the server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+$ git clone https://github.com/budiprihhastomo/InventorySave_POS_React.git
+$ cd InventorySave_POS_REST_API
+$ npm install
+$ npm start
+```
+```sh
+or you can build this app with :
+$ npm build
+```
 
-### `npm run eject`
+### Plugins
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Inventory Save POS is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Plugin |
+|--------|
+| @hapi/joi |
+| @types/jsonwebtoken |
+| bcryptjs |
+| body-parser |
+| cors |
+| express |
+| express-fileupload |
+| fs |
+| morgan |
+| mysql |
+| path |
+| util |
+| uuid |
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### API Route URL (Public)
+| Plugin | Purpose | 
+|--------|---------|
+| /dashboard | the content is dashboard of application and showed the history | 
+| /transaction | transaction will be processed in here  |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+License
+----
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+© Budi Prih Hastomo
